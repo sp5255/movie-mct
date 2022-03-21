@@ -77,7 +77,7 @@ const TopNav = () => {
                             display: { xs: "none", sm: "block" },
                         }}
                     >
-                        MUI
+                        Movie Search app
                     </Typography>
                     <form onSubmit={search} style={{ marginRight: "2rem" }}>
                         <Search>
