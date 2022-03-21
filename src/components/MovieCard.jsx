@@ -1,4 +1,3 @@
-
 import Card from "@mui/material/Card";
 
 import Typography from "@mui/material/Typography";
@@ -10,25 +9,31 @@ import {
     Stack,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import { useState } from "react";
 
 const MovieCard = (props) => {
+    const [isDisplay, setDisplay] = useState(false);
+
+    const showDetails = () => {
+        setDisplay(true);
+    };
     return (
         <>
             <Card
                 sx={{ maxWidth: "initial", m: 1, p: 1 }}
-                onClick={() => console.log("card clicked")}
+                onClick={showDetails}
             >
                 <CardActionArea>
                     <Stack direction="row">
                         <CardMedia
                             component="img"
                             image={props?.movie?.Poster}
-                            alt="green iguana"R
+                            alt="green iguana"
                             sx={{ height: "24rem", width: "initial" }}
                         />
 
-                        <Box sx = {{pl:2}}>
-                            <Stack direction="column" >
+                        <Box sx={{ pl: 2 }}>
+                            <Stack direction="column">
                                 <Typography
                                     gutterBottom
                                     variant="h5"
@@ -53,10 +58,12 @@ const MovieCard = (props) => {
                 </CardActionArea>
             </Card>
 
-            <Container>
-                <Typography variant="h5">Plot :</Typography>
-                <Typography variant="body">{props?.movie.Plot}</Typography>
-            </Container>
+            {isDisplay && (
+                <Container>
+                    <Typography variant="h5">Plot :</Typography>
+                    <Typography variant="body">{props?.movie.Plot}</Typography>
+                </Container>
+            )}
         </>
     );
 };

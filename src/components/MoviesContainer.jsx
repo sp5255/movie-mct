@@ -23,7 +23,7 @@ const MoviesContainer = (props) => {
                 <MovieCard movie={movie} />
             </Container>
         </>
-    );
+    );                      
 };
 
 export default MoviesContainer;
