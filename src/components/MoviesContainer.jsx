@@ -10,7 +10,7 @@ const MoviesContainer = (props) => {
     useEffect(() => {
         (async () => {
             const resp = await fetch(
-                `http://www.omdbapi.com/?apikey=94e02f31&t=${query}`
+                `https://www.omdbapi.com/?apikey=94e02f31&t=${query}`
             );
             const res = await resp.json();
             setMovie(res);
