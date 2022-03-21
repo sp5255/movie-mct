@@ -1,5 +1,5 @@
 import MovieCard from "./MovieCard";
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 

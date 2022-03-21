@@ -1,6 +1,6 @@
-import * as React from "react";
+
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+
 import Typography from "@mui/material/Typography";
 import {
     CardActionArea,
@@ -55,7 +55,7 @@ const MovieCard = (props) => {
 
             <Container>
                 <Typography variant="h5">Plot :</Typography>
-                <Typography variant="h6">{props?.movie.Plot}</Typography>
+                <Typography variant="body">{props?.movie.Plot}</Typography>
             </Container>
         </>
     );
