@@ -2,40 +2,62 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, CardMedia, Chip, Stack } from "@mui/material";
+import {
+    CardActionArea,
+    CardMedia,
+    Chip,
+    Container,
+    Stack,
+} from "@mui/material";
+import { Box } from "@mui/system";
 
 const MovieCard = (props) => {
     return (
-        <Card
-            sx={{ maxWidth: "initial", m: 1, p: 1 }}
-            onClick={() => console.log("card clicked")}
-        >
-            <CardActionArea>
-                <CardMedia
-                    component="img"                    
-                    image={props?.movie?.Poster}
-                    alt="green iguana"
-                    sx = {{height:"24rem"}}
-                    
-                />
-                <CardContent>
+        <>
+            <Card
+                sx={{ maxWidth: "initial", m: 1, p: 1 }}
+                onClick={() => console.log("card clicked")}
+            >
+                <CardActionArea>
+                    <Stack direction="row">
+                        <CardMedia
+                            component="img"
+                            image={props?.movie?.Poster}
+                            alt="green iguana"R
+                            sx={{ height: "24rem", width: "initial" }}
+                        />
 
-                    <Stack direction="column">
-                        <Typography gutterBottom variant="h5" component="div">
-                            {props?.movie?.Title}
-                        </Typography>
-                        <Stack direction = "row" alignItems = "center">
-                            <Typography variant="body1">Released : </Typography>
-                            <Chip
-                                label={props?.movie?.Released}
-                                variant="outlined"
-                                sx ={{ml:2}}                                
-                            />
-                        </Stack>
+                        <Box sx = {{pl:2}}>
+                            <Stack direction="column" >
+                                <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="div"
+                                >
+                                    {props?.movie?.Title}
+                                </Typography>
+
+                                <Stack direction="row" alignItems="center">
+                                    <Typography variant="body1">
+                                        Released :{" "}
+                                    </Typography>
+                                    <Chip
+                                        label={props?.movie?.Released}
+                                        variant="outlined"
+                                        sx={{ ml: 2 }}
+                                    />
+                                </Stack>
+                            </Stack>
+                        </Box>
                     </Stack>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                </CardActionArea>
+            </Card>
+
+            <Container>
+                <Typography variant="h5">Plot :</Typography>
+                <Typography variant="h6">{props?.movie.Plot}</Typography>
+            </Container>
+        </>
     );
 };
 
