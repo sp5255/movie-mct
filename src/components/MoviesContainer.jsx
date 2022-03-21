@@ -15,7 +15,7 @@ const MoviesContainer = (props) => {
             const res = await resp.json();
             setMovie(res);
         })();
-    },[]);
+    },[query]);
 
     return (
         <>
