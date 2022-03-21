@@ -1,6 +1,6 @@
 
 
-import TopNav from "./TopNav";
+import TopNav from "./components/TopNav"
 import MoviesContainer from "./components/MoviesContainer";
 import { Routes, Route } from "react-router-dom";
 
